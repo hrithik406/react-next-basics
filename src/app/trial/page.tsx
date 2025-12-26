@@ -79,7 +79,7 @@ export default function LeadsContactsPage() {
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}
-        <header className="bg-gray-200 border-b border-gray-200 px-4 md:px-6 py-3 md:py-4">
+        <header className="bg-gray-200 border-b border-gray-200 px-2 py-3 md:px-6  md:py-4">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3 flex-1 max-w-xl">
               <button 
@@ -88,7 +88,7 @@ export default function LeadsContactsPage() {
               >
                 <span className="text-xl text-black">☰</span>
               </button>
-              <div className="relative flex-1">
+              <div className="relative flex-1 -ml-2">
                 <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">🔍</span>
                 <input
                   type="text"
@@ -99,7 +99,7 @@ export default function LeadsContactsPage() {
                 </span>
               </div>
             </div>
-            <div className="flex items-center space-x-2 md:space-x-2 mr-2">
+            <div className="flex items-center space-x-2 md:space-x-2 mr-1">
               <button className="p-2 px-2.5 border rounded-3xl bg-gray-50 hover:bg-gray-100  hidden md:block">
                 <span className="text-gray-600">🔍</span>
               </button>
@@ -134,21 +134,22 @@ export default function LeadsContactsPage() {
 
           {/* Tabs and Filters */}
           <div className="rounded-lg mb-6">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 ">
-              <div className="flex items-center w-auto bg-red-300">
+            <div className="flex flex-col flex-1 lg:flex-row lg:items-center lg:justify-between gap-4 ">
+              <div className="flex items-center flex-1">
                 <div className="relative flex-1 lg:flex-initial ">
                   <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">🔍</span>
                   <input
                     type="text"
                     placeholder="Search leads..."
-                    className="w-full text-black lg:w-80 xl:w-160 pl-10  py-3 text-sm bg-gray-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                    className="w-full text-black lg:w-80 xl:w-140 pl-10  py-3 text-sm bg-gray-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
                   />
                 </div>
               </div>
+              {/* <div className="flex gap-x-2 items-center"> */}
               <div className="flex flex-wrap max-lg:w-115 max-md:w-100 items-center gap-2 bg-gray-50 p-1 border rounded-lg">
                 <button className="px-3 md:px-4 py-2 rounded-lg font-medium text-xs md:text-sm bg-yellow-100 text-gray-900 hover:cursor-pointer">
                   All Leads (6)
-                </button>
+                </button> 
                 <button className="px-3 md:px-4 py-2 rounded-lg font-medium text-xs md:text-sm text-gray-600 hover:bg-gray-100 hover:cursor-pointer">
                   New (2)
                 </button>
@@ -159,10 +160,11 @@ export default function LeadsContactsPage() {
                   Contacted (2)
                 </button>
               </div>
-                <button className="flex items-center bg-gray-50 text-gray-600 max-md:w-20 max-lg:w-25 space-x-1 px-2 md:px-4 py-3 border border-gray-200 rounded-lg hover:bg-gray-100 text-xs md:text-sm  hover:cursor-pointer">
+                <button className="flex  bg-gray-50 text-gray-600 max-md:w-20 max-lg:w-25 space-x-1 h-fit px-2 md:px-4 py-3 border border-gray-200 rounded-lg hover:bg-gray-100 text-xs md:text-sm  hover:cursor-pointer">
                   <span>⚡</span>
                   <span>Filters</span>
                 </button>
+                {/* </div> */}
             </div>
           </div>
 
@@ -184,15 +186,15 @@ export default function LeadsContactsPage() {
                         <h3 className="text-base md:text-lg font-semibold text-gray-900 wrap-break-words">{lead.name}</h3>
                       </div>
                       <div className="flex gap-x-4 justify-end">
-                        <span className={`px-2 md:px-3 py-2 rounded-2xl text-xs font-bold whitespace-nowrap ${statusColors[lead.status]}`}>
+                        <span className={`px-2 h-fit md:px-3 py-2 rounded-2xl text-xs font-bold whitespace-nowrap ${statusColors[lead.status]}`}>
                             {lead.status}
                         </span>
-                        <span className={`px-2.5 md:px-3 py-2.5 rounded-full text-xs font-bold whitespace-nowrap ${sourceColors[lead.source]}`}>
+                        <span className={`px-2 md:px-3 py-2 h-fit rounded-full text-xs font-bold whitespace-nowrap ${sourceColors[lead.source]}`}>
                             {lead.source}
                         </span>
                         </div>
                       </div>
-                      <p className="text-sm md:text-base text-gray-600 mb-3 md:mb-4 wrap-break-words">{lead.title}</p>
+                      <p className="text-sm md:text-base text-gray-600 mb-3 -mt-1 md:mb-4 wrap-break-words">{lead.title}</p>
 
                       {/* Contact Details */}
                       <div className="grid grid-cols-2 pt-4 gap-2 md:gap-4 text-xs md:text-sm">
@@ -220,13 +222,13 @@ export default function LeadsContactsPage() {
                   <div className="flex lg:flex-col items-center lg:items-end justify-between lg:justify-start space-x-4 lg:space-x-0 lg:space-y-3 lg:ml-6 pt-4 lg:pt-0 border-t lg:border-t-0 border-gray-100">
                     <div className="text-left lg:text-right">
                       <p className="text-xs text-gray-500 mb-1">Deal Value</p>
-                      <p className="text-lg md:text-xl font-bold text-green-600">{lead.dealValue}</p>
+                      <p className="text-lg md:text-xl mb-4 font-bold text-green-600">{lead.dealValue}</p>
                     </div>
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center mb-5 space-x-2">
                       <div className="w-7 h-7 flex items-center justify-center text-s text-gray-600 bg-gray-300 rounded-full">{lead.avatar}</div>
                       <span className="text-xs md:text-sm text-gray-600">{lead.assignedTo}</span>
                     </div>
-                    <button className="p-1 hover:bg-gray-100 rounded lg:self-end">
+                    <button className=" hover:bg-gray-100 rounded lg:self-end">
                       <span className="text-gray-400">⋮</span>
                     </button>
                   </div>
