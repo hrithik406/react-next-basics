@@ -56,33 +56,33 @@ export default function RootLayout({
         {/* Navigation */}
         <nav className="flex flex-1 p-4 overflow-y-auto">
           <div className="space-y-1 w-full">
-            <button className="w-full flex items-center space-x-3 px-3 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg">
-              <span className="text-xl">🏠</span>
-              <span>Dashboard</span>
+            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg hover:font-medium hover:text-black">
+              <span className="w-4 h-4 text-black"><img src="/dashboard.png" alt="" /></span>
+              <span className="px-2 ">Dashboard</span>
             </button>
-            <button className="w-full flex items-center space-x-3 px-3 py-2 text-sm xl:text-base bg-gray-100 text-gray-900 rounded-lg">
-              <span className="text-xl">👥</span>
-              <span>Leads & Contacts</span>
+            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base bg-white text-gray-900 rounded-lg hover:font-medium hover:text-black shadow-[1px_3px_7px_rgba(0,0,0,0.3)]">
+              <span className="w-4 h-4 text-black"><img src="/leads.png" alt="" /></span>
+              <span className="px-2">Leads & Contacts</span>
             </button>
-            <button className="w-full flex items-center space-x-3 px-3 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg">
-              <span className="text-xl">📈</span>
-              <span>Deals Pipeline</span>
+            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg hover:font-medium hover:text-black">
+              <span className="w-4 h-4 text-black"><img src="/deals.png" alt="" /></span>
+              <span className="px-2">Deals Pipeline</span>
             </button>
-            <button className="w-full flex items-center space-x-3 px-3 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg">
-              <span className="text-xl">📊</span>
-              <span>Analytics</span>
+            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg hover:font-medium hover:text-black">
+              <span className="w-4 h-4 text-black"><img src="/analytics.png" alt="" /></span>
+              <span className="px-2">Analytics</span>
             </button>
-            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg">
+            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg hover:font-medium hover:text-black">
               <span className="w-4 h-4"><img src="/list-check.svg" alt="" /></span>
-              <span className="px-1">Tasks & Activities</span>
+              <span className="px-2">Tasks & Activities</span>
             </button>
-            <button className="w-full flex items-center space-x-3 px-3 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg">
-              <span className="text-xl">💬</span>
-              <span >Messages</span>
+            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg hover:font-medium hover:text-black">
+              <span className="w-4 h-4 text-black"><img src="/message.png" alt="" /></span>
+              <span className="px-2">Messages</span>
             </button>
-            <button className="w-full flex items-center space-x-3 px-3 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg">
-              <span className="text-xl">⚙️</span>
-              <span>Settings</span>
+            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg hover:font-medium hover:text-black">
+              <span className="w-4 h-4 text-black"><img src="/settings.png" alt="" /></span>
+              <span className="px-2">Settings</span>
             </button>
           </div>
         </nav>
@@ -101,11 +101,11 @@ export default function RootLayout({
         {/* Theme Toggle */}
         <div className="p-4 border-t border-gray-200">
           <div className="flex items-center space-x-2 text-xs xl:text-sm">
-            <button className="flex items-center space-x-2 px-3 py-1.5 bg-gray-100 rounded-lg">
+            <button className="flex items-center text-black space-x-2 px-3 py-1.5 bg-gray-100 hover:cursor-pointer rounded-lg">
               <span>☀️</span>
               <span>Light</span>
             </button>
-            <button className="flex items-center space-x-2 px-3 py-1.5 hover:bg-gray-100 rounded-lg">
+            <button className="flex items-center text-black space-x-2 px-3 hover:cursor-pointer py-1.5 hover:bg-gray-100 rounded-lg">
               <span>🌙</span>
               <span>Dark</span>
             </button>
@@ -114,7 +114,7 @@ export default function RootLayout({
       </div>
     </div>
 
-    <div className="bg-blue-600/20">{children}</div>
+    <div>{children}</div>
     
     </section>
   )

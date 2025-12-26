@@ -75,11 +75,11 @@ export default function LeadsContactsPage() {
   };
 
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex h-screen bg-gray-200">
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}
-        <header className="bg-gray-100 border-b border-gray-200 px-4 md:px-6 lg:px-8 py-3 md:py-4">
+        <header className="bg-gray-200 border-b border-gray-200 px-4 md:px-6 lg:px-8 py-3 md:py-4">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3 flex-1 max-w-xl">
               <button 
@@ -93,7 +93,7 @@ export default function LeadsContactsPage() {
                 <input
                   type="text"
                   placeholder="Search ....."
-                  className="w-full pl-10 pr-4 py-2 text-sm text-black md:text-base border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                  className="w-full bg-white pl-10 pr-4 py-2 text-sm text-black md:text-base border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
                 />
                 <span className="hidden md:block absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs">⌘ K</span>
               </div>
@@ -179,7 +179,7 @@ export default function LeadsContactsPage() {
                     {/* Lead Info */}
                     <div className="flex-1 min-w-0">
                         <div className="grid grid-cols-2">
-                      <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <div className="flex flex-wrap items-center gap-2 ">
                         <h3 className="text-base md:text-lg font-semibold text-gray-900 wrap-break-words">{lead.name}</h3>
                       </div>
                       <div className="flex gap-x-4 justify-end">
