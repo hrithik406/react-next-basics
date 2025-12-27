@@ -56,31 +56,31 @@ export default function RootLayout({
         {/* Navigation */}
         <nav className="flex flex-1 p-4 overflow-y-auto">
           <div className="space-y-1 w-full">
-            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg hover:font-medium hover:text-black">
+            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg hover:font-medium hover:text-black hover:px-6 transition-all duration-300 hover:cursor-pointer">
               <span className="w-4 h-4 text-black"><img src="/dashboard.png" alt="" /></span>
               <span className="px-2 ">Dashboard</span>
             </button>
-            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base bg-white text-gray-900 rounded-lg hover:font-medium hover:text-black shadow-[1px_3px_7px_rgba(0,0,0,0.3)]">
+            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base bg-gray-200 text-gray-900 rounded-lg hover:font-medium hover:text-black shadow-[1px_2px_10px_rgba(0,0,0,0.1)]">
               <span className="w-4 h-4 text-black"><img src="/leads.png" alt="" /></span>
               <span className="px-2">Leads & Contacts</span>
             </button>
-            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg hover:font-medium hover:text-black">
+            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg hover:font-medium hover:text-black hover:px-6 transition-all duration-300 hover:cursor-pointer">
               <span className="w-4 h-4 text-black"><img src="/deals.png" alt="" /></span>
               <span className="px-2">Deals Pipeline</span>
             </button>
-            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg hover:font-medium hover:text-black">
+            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg hover:font-medium hover:text-black hover:px-6 transition-all duration-300 hover:cursor-pointer">
               <span className="w-4 h-4 text-black"><img src="/analytics.png" alt="" /></span>
               <span className="px-2">Analytics</span>
             </button>
-            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg hover:font-medium hover:text-black">
+            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg hover:font-medium hover:text-black hover:px-6 transition-all duration-300 hover:cursor-pointer">
               <span className="w-4 h-4"><img src="/list-check.svg" alt="" /></span>
               <span className="px-2">Tasks & Activities</span>
             </button>
-            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg hover:font-medium hover:text-black">
+            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg hover:font-medium hover:text-black hover:px-6 transition-all duration-300 hover:cursor-pointer">
               <span className="w-4 h-4 text-black"><img src="/message.png" alt="" /></span>
               <span className="px-2">Messages</span>
             </button>
-            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg hover:font-medium hover:text-black">
+            <button className="w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base text-gray-600 hover:bg-gray-100 rounded-lg hover:font-medium hover:text-black hover:px-6 transition-all duration-300 hover:cursor-pointer">
               <span className="w-4 h-4 text-black"><img src="/settings.png" alt="" /></span>
               <span className="px-2">Settings</span>
             </button>
@@ -89,7 +89,7 @@ export default function RootLayout({
 
         {/* Upgrade Card */}
         <div className="p-4">
-          <div className="bg-linear-to-br from-orange-100 to-yellow-100 rounded-lg p-4">
+          <div className="bg-linear-to-tr from-orange-200 to-green-200 rounded-lg p-4">
             <h3 className="font-semibold text-gray-900 mb-1 text-sm xl:text-base">Upgrade to Pro</h3>
             <p className="text-xs xl:text-sm text-gray-600 mb-4">Unlock advanced features and unlimited contacts</p>
             <button className="w-full bg-white text-gray-900 py-2 px-4 rounded-lg font-medium text-sm hover:bg-gray-50">

@@ -89,7 +89,7 @@ export default function LeadsContactsPage() {
                 <span className="text-xl text-black">☰</span>
               </button>
               <div className="relative flex-1 -ml-2">
-                <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">🔍</span>
+                <span className="absolute w-4.5 left-3.5 top-1/2 transform -translate-y-1/2 text-gray-400"><img src="/search.png" alt="" /></span>
                 <input
                   type="text"
                   placeholder="Search ....."
@@ -100,14 +100,14 @@ export default function LeadsContactsPage() {
               </div>
             </div>
             <div className="flex items-center space-x-2 md:space-x-2 mr-1">
-              <button className="p-2 px-2.5 border rounded-3xl bg-gray-50 hover:bg-gray-100  hidden md:block">
-                <span className="text-gray-600">🔍</span>
+              <button className="p-2 px-2.5 border rounded-3xl bg-gray-50 w-10 h-10  hover:bg-gray-100  hidden md:block">
+                <span className="text-gray-600"><img src="/search.png" alt="" /></span>
               </button>
-              <button className="p-2 px-2.5 border rounded-3xl bg-gray-50 hover:bg-gray-100 hidden md:block">
-                <span className="text-gray-600">⚡</span>
+              <button className="p-2 px-2.5 border rounded-3xl bg-gray-50 w-10 h-10 hover:bg-gray-100 hidden md:block">
+                <span className="text-gray-600"><img src="/bolts.png" alt="" /></span>
               </button>
-              <button className="p-2 px-2.5 border rounded-3xl bg-gray-50 hover:bg-gray-100 ">
-                <span className="text-gray-600">🔔</span>
+              <button className="p-2 px-2.5 border rounded-3xl bg-gray-50 w-10 h-10 hover:bg-gray-100 ">
+                <span className="text-gray-600"><img src="/bells.png" alt="" /></span>
               </button>
               <div className="flex items-center bg-gray-50 border rounded-3xl p-1 pr-1 space-x-2">
                 <div className="w-8 h-8 bg-purple-500 rounded-full"></div>
@@ -137,7 +137,7 @@ export default function LeadsContactsPage() {
             <div className="flex flex-col flex-1 lg:flex-row lg:items-center lg:justify-between gap-4 ">
               <div className="flex items-center flex-1">
                 <div className="relative flex-1 lg:flex-initial ">
-                  <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">🔍</span>
+                  <span className="absolute w-4.5 left-3.5 top-1/2 transform -translate-y-1/2 text-gray-400"><img src="/search.png" alt="" /></span>
                   <input
                     type="text"
                     placeholder="Search leads..."
@@ -161,8 +161,8 @@ export default function LeadsContactsPage() {
                 </button>
               </div>
                 <button className="flex  bg-gray-50 text-gray-600 max-md:w-20 max-lg:w-25 space-x-1 h-fit px-2 md:px-4 py-3 border border-gray-200 rounded-lg hover:bg-gray-100 text-xs md:text-sm  hover:cursor-pointer">
-                  <span>⚡</span>
-                  <span>Filters</span>
+                  <span className="w-4 pt-px "><img src="/filter.png" alt="" /></span>
+                  <span className="pl-0.5">Filters</span>
                 </button>
                 {/* </div> */}
             </div>
@@ -199,20 +199,20 @@ export default function LeadsContactsPage() {
                       {/* Contact Details */}
                       <div className="grid grid-cols-2 pt-4 gap-2 md:gap-4 text-xs md:text-sm">
                         <div className="flex items-center space-x-2 text-gray-600 truncate">
-                          <span className="shrink-0">✉️</span>
+                          <span className="shrink-0 w-4"><img src="/mail.png" alt="" /></span>
                           <span className="truncate">{lead.email}</span>
                         </div>
                         <div className="flex items-center space-x-2 text-gray-600 truncate">
-                          <span className="shrink-0">📞</span>
+                          <span className="shrink-0 w-4"><img src="/phone.png" alt="" /></span>
                           <span className="truncate">{lead.phone}</span>
                         </div>
                         <div className="flex items-center space-x-2 text-gray-600 truncate">
-                          <span className="shrink-0">📍</span>
-                          <span className="truncate">{lead.location}</span>
+                          <span className="shrink-0 w-4"><img src="/building.png" alt="" /></span>
+                          <span className="truncate">{lead.company}</span>
                         </div>
                         <div className="flex items-center space-x-2 text-gray-600 truncate">
-                          <span className="shrink-0">🏢</span>
-                          <span className="truncate">{lead.company}</span>
+                          <span className="shrink-0 w-4"><img src="/location.png" alt="" /></span>
+                          <span className="truncate">{lead.location}</span>
                         </div>
                       </div>
                     </div>
@@ -224,7 +224,7 @@ export default function LeadsContactsPage() {
                       <p className="text-xs text-gray-500 mb-1">Deal Value</p>
                       <p className="text-lg md:text-xl mb-4 font-bold text-green-600">{lead.dealValue}</p>
                     </div>
-                    <div className="flex items-center mb-5 space-x-2">
+                    <div className="flex items-center mb-5 max-lg:mb-0 space-x-2">
                       <div className="w-7 h-7 flex items-center justify-center text-s text-gray-600 bg-gray-300 rounded-full">{lead.avatar}</div>
                       <span className="text-xs md:text-sm text-gray-600">{lead.assignedTo}</span>
                     </div>
