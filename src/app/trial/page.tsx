@@ -75,11 +75,11 @@ export default function LeadsContactsPage() {
   };
 
   return (
-    <div className="font-outfit flex h-screen bg-gray-200">
+    <div className=" flex h-screen bg-slate-100">
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}
-        <header className="bg-gray-200 border-b border-gray-200 px-2 py-3 md:px-6  md:py-4">
+        <header className="border-b border-gray-200 px-2 py-3 md:px-6  md:py-4">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3 flex-1 max-w-xl">
               <button 
@@ -100,16 +100,16 @@ export default function LeadsContactsPage() {
               </div>
             </div>
             <div className="flex items-center space-x-2 md:space-x-2 mr-1">
-              <button className="p-2 px-2.5 border rounded-3xl bg-gray-50 w-10 h-10  hover:bg-gray-100  hidden md:block">
+              <button className="p-2 px-2.5 border  rounded-3xl bg-white w-10 h-10 border-gray-200 hover:bg-gray-100  hidden md:block hover:cursor-pointer">
                 <span className="text-gray-600"><img src="/search.png" alt="" /></span>
               </button>
-              <button className="p-2 px-2.5 border rounded-3xl bg-gray-50 w-10 h-10 hover:bg-gray-100 hidden md:block">
+              <button className="p-2 px-2.5 border rounded-3xl bg-white w-10 h-10 border-gray-200 hover:bg-gray-100 hidden md:block hover:cursor-pointer">
                 <span className="text-gray-600"><img src="/bolts.png" alt="" /></span>
               </button>
-              <button className="p-2 px-2.5 border rounded-3xl bg-gray-50 w-10 h-10 hover:bg-gray-100 ">
+              <button className="p-2 px-2.5 border rounded-3xl bg-white w-10 h-10 border-gray-200 hover:bg-gray-100 hover:cursor-pointer">
                 <span className="text-gray-600"><img src="/bells.png" alt="" /></span>
               </button>
-              <div className="flex items-center bg-gray-50 border rounded-3xl p-1 pr-1 space-x-2">
+              <div className="flex items-center bg-white border border-gray-200 rounded-3xl p-1 pr-1 space-x-2 hover:cursor-pointer">
                 <div className="w-8 h-8 bg-purple-500 rounded-full"></div>
                 <span className="font-medium text-black hidden sm:block">Warren</span>
                 <span className="text-black sm:block">▼</span>
@@ -141,12 +141,12 @@ export default function LeadsContactsPage() {
                   <input
                     type="text"
                     placeholder="Search leads..."
-                    className="w-full text-black lg:w-80 xl:w-140 pl-10  py-3 text-sm bg-gray-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                    className="w-full text-black lg:w-80 xl:w-140 pl-10  py-3 text-sm bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
                   />
                 </div>
               </div>
               {/* <div className="flex gap-x-2 items-center"> */}
-              <div className="flex flex-wrap max-lg:w-115 max-md:w-100 items-center gap-2 bg-gray-50 p-1 border rounded-lg">
+              <div className="flex flex-wrap max-lg:w-115 max-md:w-100 items-center gap-2 bg-white p-1 border rounded-lg">
                 <button className="px-3 md:px-4 py-2 rounded-lg font-medium text-xs md:text-sm bg-yellow-100 text-gray-900 hover:cursor-pointer">
                   All Leads (6)
                 </button> 
@@ -160,7 +160,7 @@ export default function LeadsContactsPage() {
                   Contacted (2)
                 </button>
               </div>
-                <button className="flex  bg-gray-50 text-gray-600 max-md:w-20 max-lg:w-25 space-x-1 h-fit px-2 md:px-4 py-3 border border-gray-200 rounded-lg hover:bg-gray-100 text-xs md:text-sm  hover:cursor-pointer">
+                <button className="flex  bg-white text-gray-600 max-md:w-20 max-lg:w-25 space-x-1 h-fit px-2 md:px-4 py-3 border border-gray-200 rounded-lg hover:bg-gray-100 text-xs md:text-sm  hover:cursor-pointer">
                   <span className="w-4 pt-px "><img src="/filter.png" alt="" /></span>
                   <span className="pl-0.5">Filters</span>
                 </button>

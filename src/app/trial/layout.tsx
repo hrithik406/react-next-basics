@@ -99,14 +99,14 @@ export default function RootLayout({
         </div>
 
         {/* Theme Toggle */}
-        <div className="p-4 border-t border-gray-200">
-          <div className="flex items-center space-x-2 text-xs xl:text-sm">
-            <button className="flex items-center text-black space-x-2 px-3 py-1.5 bg-gray-100 hover:cursor-pointer rounded-lg">
-              <span>☀️</span>
+        <div className=" flex justify-center p-4 border-t border-gray-200">
+          <div className="flex items-center bg-gray-200 p-2 border rounded-full space-x-2 text-xs xl:text-sm">
+            <button className="flex items-center text-black space-x-1 px-3 py-1.5 bg-gray-50 hover:cursor-pointer rounded-2xl">
+              <span className="w-4 "><img src="/sun.png" alt="" /></span>
               <span>Light</span>
             </button>
-            <button className="flex items-center text-black space-x-2 px-3 hover:cursor-pointer py-1.5 hover:bg-gray-100 rounded-lg">
-              <span>🌙</span>
+            <button className="flex items-center text-black space-x-1 px-3 py-1.5  hover:cursor-pointer rounded-2xl">
+              <span className="w-4"><img src="/moon.png" alt="" /></span>
               <span>Dark</span>
             </button>
           </div>
