@@ -100,7 +100,7 @@ export default function LeadsContactsPage() {
               </div>
             </div>
             <div className="flex items-center space-x-2 md:space-x-2 mr-1">
-              <button className="p-2 px-2.5 border  rounded-3xl bg-white w-10 h-10 border-gray-200 hover:bg-gray-100  hidden md:block hover:cursor-pointer">
+              <button className="p-2 px-2.5 border rounded-3xl bg-white w-10 h-10 border-gray-200 hover:bg-gray-100 hidden md:block hover:cursor-pointer">
                 <span className="text-gray-600"><img src="/search.png" alt="" /></span>
               </button>
               <button className="p-2 px-2.5 border rounded-3xl bg-white w-10 h-10 border-gray-200 hover:bg-gray-100 hidden md:block hover:cursor-pointer">

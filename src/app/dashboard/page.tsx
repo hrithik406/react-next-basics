@@ -1,3 +1,8 @@
+import React from "react";
+import HeaderButton from "./components/HeaderButton";
+import LeadsBtn from "./components/LeadsBtn";
+import ContactBtn from "./components/ContactBtn";
+
 export default function LeadsContactsPage() {
   const leads = [
     {
@@ -62,29 +67,49 @@ export default function LeadsContactsPage() {
     }
   ];
 
-  const statusColors:Record<string,any> = {
+  const statusColors: Record<string, any> = {
     qualified: 'bg-green-100 text-green-700',
     contacted: 'bg-purple-100 text-purple-700',
     new: 'bg-blue-100 text-blue-700'
   };
 
-  const sourceColors:Record<string,any> = {
+  const sourceColors: Record<string, any> = {
     website: 'bg-orange-100 text-orange-700',
     linkedin: 'bg-blue-100 text-blue-700',
     referral: 'bg-red-100 text-red-700'
   };
 
+  // const request = {
+  //   headers: "",
+  //   method: "GET",
+  //   body: {
+  //     name: "kriss"
+  //   }
+  // } 
+
+  // request.body.name
+
+  // function Temp(){
+  //   return (
+  //     <>
+  //     {request.body.name}
+  //     </>
+  //   )
+  // }
+
   return (
+
     <div className=" flex h-screen bg-slate-100">
+      {/* {Temp()} */}
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}
         <header className="border-b border-gray-200 px-2 py-3 md:px-6  md:py-4">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3 flex-1 max-w-xl">
-              <button 
+              <button
                 className="lg:hidden p-2 hover:bg-gray-100 rounded-lg hover:cursor-pointer"
-                // onClick={toggleSidebar}
+              // onClick={toggleSidebar}
               >
                 <span className="text-xl text-black">☰</span>
               </button>
@@ -99,16 +124,14 @@ export default function LeadsContactsPage() {
                 </span>
               </div>
             </div>
+
+            <React.Fragment>
+
+            </React.Fragment>
             <div className="flex items-center space-x-2 md:space-x-2 mr-1">
-              <button className="p-2 px-2.5 border  rounded-3xl bg-white w-10 h-10 border-gray-200 hover:bg-gray-100  hidden md:block hover:cursor-pointer">
-                <span className="text-gray-600"><img src="/search.png" alt="" /></span>
-              </button>
-              <button className="p-2 px-2.5 border rounded-3xl bg-white w-10 h-10 border-gray-200 hover:bg-gray-100 hidden md:block hover:cursor-pointer">
-                <span className="text-gray-600"><img src="/bolts.png" alt="" /></span>
-              </button>
-              <button className="p-2 px-2.5 border rounded-3xl bg-white w-10 h-10 border-gray-200 hover:bg-gray-100 hover:cursor-pointer">
-                <span className="text-gray-600"><img src="/bells.png" alt="" /></span>
-              </button>
+              <HeaderButton className="hidden md:block" iconSrc="/search.png" />
+              <HeaderButton className="hidden md:block" iconSrc="/bolts.png" />
+              <HeaderButton iconSrc="/bells.png" />
               <div className="flex items-center bg-white border border-gray-200 rounded-3xl p-1 pr-1 space-x-2 hover:cursor-pointer">
                 <div className="w-8 h-8 bg-purple-500 rounded-full"></div>
                 <span className="font-medium text-black hidden sm:block">Warren</span>
@@ -147,24 +170,16 @@ export default function LeadsContactsPage() {
               </div>
               {/* <div className="flex gap-x-2 items-center"> */}
               <div className="flex flex-wrap max-lg:w-115 max-md:w-100 items-center gap-2 bg-white p-1 border rounded-lg">
-                <button className="px-3 md:px-4 py-2 rounded-lg font-medium text-xs md:text-sm bg-yellow-100 text-gray-900 hover:cursor-pointer">
-                  All Leads (6)
-                </button> 
-                <button className="px-3 md:px-4 py-2 rounded-lg font-medium text-xs md:text-sm text-gray-600 hover:bg-gray-100 hover:cursor-pointer">
-                  New (2)
-                </button>
-                <button className="px-3 md:px-4 py-2 rounded-lg font-medium text-xs md:text-sm text-gray-600 hover:bg-gray-100 hover:cursor-pointer">
-                  Qualified (2)
-                </button>
-                <button className="px-3 md:px-4 py-2 rounded-lg font-medium text-xs md:text-sm text-gray-600 hover:bg-gray-100 hover:cursor-pointer">
-                  Contacted (2)
-                </button>
+                <LeadsBtn className="bg-yellow-100 text-gray-900">All Leads (6)</LeadsBtn>
+                <LeadsBtn className="text-gray-600 hover:bg-gray-100">New (2)</LeadsBtn>
+                <LeadsBtn className="text-gray-600 hover:bg-gray-100">Qualified (2)</LeadsBtn>
+                <LeadsBtn className="text-gray-600 hover:bg-gray-100">Contacted (2)</LeadsBtn>
               </div>
-                <button className="flex  bg-white text-gray-600 max-md:w-20 max-lg:w-25 space-x-1 h-fit px-2 md:px-4 py-3 border border-gray-200 rounded-lg hover:bg-gray-100 text-xs md:text-sm  hover:cursor-pointer">
-                  <span className="w-4 pt-px "><img src="/filter.png" alt="" /></span>
-                  <span className="pl-0.5">Filters</span>
-                </button>
-                {/* </div> */}
+              <button className="flex  bg-white text-gray-600 max-md:w-20 max-lg:w-25 space-x-1 h-fit px-2 md:px-4 py-3 border border-gray-200 rounded-lg hover:bg-gray-100 text-xs md:text-sm  hover:cursor-pointer">
+                <span className="w-4 pt-px "><img src="/filter.png" alt="" /></span>
+                <span className="pl-0.5">Filters</span>
+              </button>
+              {/* </div> */}
             </div>
           </div>
 
@@ -181,39 +196,27 @@ export default function LeadsContactsPage() {
 
                     {/* Lead Info */}
                     <div className="flex-1 min-w-0">
-                        <div className="grid grid-cols-2">
-                      <div className="flex flex-wrap items-center gap-2 ">
-                        <h3 className="text-base md:text-lg font-semibold text-gray-900 wrap-break-words">{lead.name}</h3>
-                      </div>
-                      <div className="flex gap-x-4 justify-end">
-                        <span className={`px-2 h-fit md:px-3 py-2 rounded-2xl text-xs font-bold whitespace-nowrap ${statusColors[lead.status]}`}>
+                      <div className="grid grid-cols-2">
+                        <div className="flex flex-wrap items-center gap-2 ">
+                          <h3 className="text-base md:text-lg font-semibold text-gray-900 wrap-break-words">{lead.name}</h3>
+                        </div>
+                        <div className="flex gap-x-4 justify-end">
+                          <span className={`px-2 h-fit md:px-3 py-1 rounded-2xl text-xs font-bold whitespace-nowrap ${statusColors[lead.status]}`}>
                             {lead.status}
-                        </span>
-                        <span className={`px-2 md:px-3 py-2 h-fit rounded-full text-xs font-bold whitespace-nowrap ${sourceColors[lead.source]}`}>
+                          </span>
+                          <span className={`px-2 md:px-3 py-1 h-fit rounded-full text-xs font-bold whitespace-nowrap ${sourceColors[lead.source]}`}>
                             {lead.source}
-                        </span>
+                          </span>
                         </div>
                       </div>
                       <p className="text-sm md:text-base text-gray-600 mb-3 -mt-1 md:mb-4 wrap-break-words">{lead.title}</p>
 
                       {/* Contact Details */}
                       <div className="grid grid-cols-2 pt-4 gap-2 md:gap-4 text-xs md:text-sm">
-                        <div className="flex items-center space-x-2 text-gray-600 truncate">
-                          <span className="shrink-0 w-4"><img src="/mail.png" alt="" /></span>
-                          <span className="truncate">{lead.email}</span>
-                        </div>
-                        <div className="flex items-center space-x-2 text-gray-600 truncate">
-                          <span className="shrink-0 w-4"><img src="/phone.png" alt="" /></span>
-                          <span className="truncate">{lead.phone}</span>
-                        </div>
-                        <div className="flex items-center space-x-2 text-gray-600 truncate">
-                          <span className="shrink-0 w-4"><img src="/building.png" alt="" /></span>
-                          <span className="truncate">{lead.company}</span>
-                        </div>
-                        <div className="flex items-center space-x-2 text-gray-600 truncate">
-                          <span className="shrink-0 w-4"><img src="/location.png" alt="" /></span>
-                          <span className="truncate">{lead.location}</span>
-                        </div>
+                        <ContactBtn iconSrc="/mail.png">{lead.email}</ContactBtn>
+                        <ContactBtn iconSrc="/phone.png">{lead.phone}</ContactBtn>
+                        <ContactBtn iconSrc="/building.png">{lead.company}</ContactBtn>
+                        <ContactBtn iconSrc="/location.png">{lead.location}</ContactBtn>
                       </div>
                     </div>
                   </div>
