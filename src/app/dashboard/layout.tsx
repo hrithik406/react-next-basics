@@ -89,10 +89,10 @@ export default function RootLayout({
 
         {/* Upgrade Card */}
         <div className="p-4">
-          <div className="bg-linear-to-tr from-orange-200 to-green-200 rounded-lg p-4">
+          <div className="bg-linear-to-tr from-orange-300 via-orange-100 to-slate-100 rounded-lg p-4">
             <h3 className="font-semibold text-gray-900 mb-1 text-sm xl:text-base">Upgrade to Pro</h3>
             <p className="text-xs xl:text-sm text-gray-600 mb-4">Unlock advanced features and unlimited contacts</p>
-            <button className="w-full bg-white text-gray-900 py-2 px-4 rounded-lg font-medium text-sm hover:bg-gray-50">
+            <button className="w-full mt-6 bg-white text-gray-900 py-2 px-4 rounded-lg font-medium text-sm hover:bg-gray-50">
               Upgrade Now
             </button>
           </div>
