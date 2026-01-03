@@ -1,9 +1,9 @@
 export default function  Calc(){
     return(
         <div className="flex h-screen relative justify-center items-center">
-        <div className="h-120 w-100 bg-black">
+        <div className="h-120 w-100 border-transparent rounded-4xl bg-slate-900">
             <div className="flex justify-center text-black m-5">
-                <input className="h-13 w-90 border-2 px-2 bg-teal-600 text-3xl" type="number" dir="rtl" placeholder='0'/>
+                <input className="h-13 w-90 mt-3 border-2 rounded-2xl px-2 bg-teal-600 text-3xl" type="number" dir="rtl" placeholder='0'/>
             </div>
             <div className="px-5">
             <div className="grid h-90 w-93 -m-2  grid-cols-4 gap-2 grid-rows-5 p-2">

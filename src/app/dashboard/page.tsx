@@ -4,7 +4,24 @@ import LeadsBtn from "./components/LeadsBtn";
 import ContactBtn from "./components/ContactBtn";
 
 export default function LeadsContactsPage() {
-  const leads = [
+
+  type leadsType = {
+    id: number;
+    initials: string;
+    name: string;
+    title: string;
+    email: string;
+    phone: string;
+    company: string;
+    location: string;
+    status: string;
+    source: string;
+    dealValue: string;
+    assignedTo: string;
+    avatar: string;
+  }
+
+  const leads: leadsType[] = [
     {
       id: 1,
       initials: 'JA',
@@ -79,6 +96,60 @@ export default function LeadsContactsPage() {
     referral: 'bg-red-100 text-red-700'
   };
 
+  const LeadsCard = (lead: leadsType) => (
+    <div key={lead.id} className="bg-white rounded-lg border border-gray-200 p-4 md:p-6 hover:shadow-md transition-shadow">
+      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
+        <div className="flex items-start space-x-3 md:space-x-4 flex-1">
+          {/* Avatar */}
+          <div className="w-10 mt-1 h-10 md:w-12 md:h-12 bg-gray-200 rounded-full flex items-center justify-center shrink-0">
+            <span className="text-gray-600 font-semibold text-sm md:text-base">{lead.initials}</span>
+          </div>
+
+          {/* Lead Info */}
+          <div className="flex-1 min-w-0">
+            <div className="grid grid-cols-2">
+              <div className="flex flex-wrap items-center gap-2 ">
+                <h3 className="text-base md:text-lg font-semibold text-gray-900 wrap-break-words">{lead.name}</h3>
+              </div>
+              <div className="flex gap-x-4 justify-end">
+                <span className={`px-2 h-fit md:px-3 py-1 rounded-2xl text-xs font-bold whitespace-nowrap ${statusColors[lead.status]}`}>
+                  {lead.status}
+                </span>
+                <span className={`px-2 md:px-3 py-1 h-fit rounded-full text-xs font-bold whitespace-nowrap ${sourceColors[lead.source]}`}>
+                  {lead.source}
+                </span>
+              </div>
+            </div>
+            <p className="text-sm md:text-base text-gray-600 mb-3 -mt-1 md:mb-4 wrap-break-words">{lead.title}</p>
+
+            {/* Contact Details */}
+            <div className="grid grid-cols-2 pt-4 gap-2 md:gap-4 text-xs md:text-sm">
+              <ContactBtn iconSrc="/mail.png">{lead.email}</ContactBtn>
+              <ContactBtn iconSrc="/phone.png">{lead.phone}</ContactBtn>
+              <ContactBtn iconSrc="/building.png">{lead.company}</ContactBtn>
+              <ContactBtn iconSrc="/location.png">{lead.location}</ContactBtn>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Side - Deal Value and Assigned To */}
+        <div className="flex lg:flex-col items-center lg:items-end justify-between lg:justify-start space-x-4 lg:space-x-0 lg:space-y-3 lg:ml-6 pt-4 lg:pt-0 border-t lg:border-t-0 border-gray-100">
+          <div className="text-left lg:text-right">
+            <p className="text-xs text-gray-500 mb-1">Deal Value</p>
+            <p className="text-lg md:text-xl mb-4 font-bold text-green-600">{lead.dealValue}</p>
+          </div>
+          <div className="flex items-center mb-5 max-lg:mb-0 space-x-2">
+            <div className="w-7 h-7 flex items-center justify-center text-s text-gray-600 bg-gray-300 rounded-full">{lead.avatar}</div>
+            <span className="text-xs md:text-sm text-gray-600">{lead.assignedTo}</span>
+          </div>
+          <button className=" hover:bg-gray-100 rounded lg:self-end">
+            <span className="text-gray-400">⋮</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+
   // const request = {
   //   headers: "",
   //   method: "GET",
@@ -96,6 +167,16 @@ export default function LeadsContactsPage() {
   //     </>
   //   )
   // }
+
+  const obj = {
+    name: "henry",
+    age: 12
+  }
+
+  const obj2 = {
+    ...obj,
+    name: "hrithik",
+  }
 
   return (
 
@@ -147,58 +228,8 @@ export default function LeadsContactsPage() {
 
           {/* Leads List */}
           <div className="space-y-4">
-            {leads.map((lead) => (
-              <div key={lead.id} className="bg-white rounded-lg border border-gray-200 p-4 md:p-6 hover:shadow-md transition-shadow">
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
-                  <div className="flex items-start space-x-3 md:space-x-4 flex-1">
-                    {/* Avatar */}
-                    <div className="w-10 mt-1 h-10 md:w-12 md:h-12 bg-gray-200 rounded-full flex items-center justify-center shrink-0">
-                      <span className="text-gray-600 font-semibold text-sm md:text-base">{lead.initials}</span>
-                    </div>
-
-                    {/* Lead Info */}
-                    <div className="flex-1 min-w-0">
-                      <div className="grid grid-cols-2">
-                        <div className="flex flex-wrap items-center gap-2 ">
-                          <h3 className="text-base md:text-lg font-semibold text-gray-900 wrap-break-words">{lead.name}</h3>
-                        </div>
-                        <div className="flex gap-x-4 justify-end">
-                          <span className={`px-2 h-fit md:px-3 py-1 rounded-2xl text-xs font-bold whitespace-nowrap ${statusColors[lead.status]}`}>
-                            {lead.status}
-                          </span>
-                          <span className={`px-2 md:px-3 py-1 h-fit rounded-full text-xs font-bold whitespace-nowrap ${sourceColors[lead.source]}`}>
-                            {lead.source}
-                          </span>
-                        </div>
-                      </div>
-                      <p className="text-sm md:text-base text-gray-600 mb-3 -mt-1 md:mb-4 wrap-break-words">{lead.title}</p>
-
-                      {/* Contact Details */}
-                      <div className="grid grid-cols-2 pt-4 gap-2 md:gap-4 text-xs md:text-sm">
-                        <ContactBtn iconSrc="/mail.png">{lead.email}</ContactBtn>
-                        <ContactBtn iconSrc="/phone.png">{lead.phone}</ContactBtn>
-                        <ContactBtn iconSrc="/building.png">{lead.company}</ContactBtn>
-                        <ContactBtn iconSrc="/location.png">{lead.location}</ContactBtn>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Right Side - Deal Value and Assigned To */}
-                  <div className="flex lg:flex-col items-center lg:items-end justify-between lg:justify-start space-x-4 lg:space-x-0 lg:space-y-3 lg:ml-6 pt-4 lg:pt-0 border-t lg:border-t-0 border-gray-100">
-                    <div className="text-left lg:text-right">
-                      <p className="text-xs text-gray-500 mb-1">Deal Value</p>
-                      <p className="text-lg md:text-xl mb-4 font-bold text-green-600">{lead.dealValue}</p>
-                    </div>
-                    <div className="flex items-center mb-5 max-lg:mb-0 space-x-2">
-                      <div className="w-7 h-7 flex items-center justify-center text-s text-gray-600 bg-gray-300 rounded-full">{lead.avatar}</div>
-                      <span className="text-xs md:text-sm text-gray-600">{lead.assignedTo}</span>
-                    </div>
-                    <button className=" hover:bg-gray-100 rounded lg:self-end">
-                      <span className="text-gray-400">⋮</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
+            {leads.map((lead, index) => (
+              <LeadsCard key={index} {...lead} company={lead.company + " LTD"} />
             ))}
           </div>
         </main>

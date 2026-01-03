@@ -1,8 +1,13 @@
 import StoryStats from "../components/StoryStats";
 
 export default function AboutPage() {
+    type valuesType = {
+        icon: string;
+        title: string;
+        description: string;
+    }
 
-    const values = [
+    const values: valuesType[] = [
         {
             icon: '/deals.png',
             title: 'Mission Driven',
@@ -35,7 +40,28 @@ export default function AboutPage() {
         }
     ];
 
-    const teamMembers = [
+    const ValuesCard = (value: valuesType) => (
+        <div className="bg-white rounded-xl p-6 md:p-8 border border-gray-200 hover:shadow-xl transition-all duration-300 hover:scale-105"
+        >
+            <div className="text-4xl md:text-5xl mb-4 w-9"><img src={value.icon} alt="" /></div>
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                {value.title}
+            </h3>
+            <p className="text-gray-600 leading-relaxed">
+                {value.description}
+            </p>
+        </div>
+    )
+
+    type teamMembersType = {
+        id: number;
+        name: string;
+        role: string;
+        initials: string;
+        color: string;
+    }
+
+    const teamMembers: teamMembersType[] = [
         {
             id: 1,
             name: 'Sarah Johnson',
@@ -65,6 +91,20 @@ export default function AboutPage() {
             color: 'from-green-400 to-teal-400'
         }
     ];
+
+    const MembersCard = (member: teamMembersType) => (
+        <div className="bg-white rounded-xl p-6 md:p-8 border border-gray-200 text-center hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <div className={`w-24 h-24 md:w-32 md:h-32 bg-linear-to-br ${member.color} rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg`}>
+                <span className="text-2xl md:text-3xl font-bold text-white">{member.initials}</span>
+            </div>
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                {member.name}
+            </h3>
+            <p className="text-base md:text-lg text-gray-600 font-medium">
+                {member.role}
+            </p>
+        </div>
+    )
 
     return (
         <div className="min-h-screen bg-slate-100">
@@ -146,18 +186,7 @@ export default function AboutPage() {
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                         {values.map((value, index) => (
-                            <div
-                                key={index}
-                                className="bg-white rounded-xl p-6 md:p-8 border border-gray-200 hover:shadow-xl transition-all duration-300 hover:scale-105"
-                            >
-                                <div className="text-4xl md:text-5xl mb-4 w-9"><img src={value.icon} alt="" /></div>
-                                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
-                                    {value.title}
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed">
-                                    {value.description}
-                                </p>
-                            </div>
+                            <ValuesCard key={index} {...value} />
                         ))}
                     </div>
                 </section>
@@ -175,21 +204,8 @@ export default function AboutPage() {
                     </div>
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                        {teamMembers.map((member) => (
-                            <div
-                                key={member.id}
-                                className="bg-white rounded-xl p-6 md:p-8 border border-gray-200 text-center hover:shadow-xl transition-all duration-300 hover:scale-105"
-                            >
-                                <div className={`w-24 h-24 md:w-32 md:h-32 bg-linear-to-br ${member.color} rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg`}>
-                                    <span className="text-2xl md:text-3xl font-bold text-white">{member.initials}</span>
-                                </div>
-                                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
-                                    {member.name}
-                                </h3>
-                                <p className="text-base md:text-lg text-gray-600 font-medium">
-                                    {member.role}
-                                </p>
-                            </div>
+                        {teamMembers.map((member, idx) => (
+                            <MembersCard key={idx} {...member} />
                         ))}
                     </div>
                 </section>

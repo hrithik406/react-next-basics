@@ -112,9 +112,18 @@ export default function ProfilePage() {
         </p>
     </div>)
 
-    const companyPerformance = [
+    type companyPerformanceType = {
+        companyName: string;
+        metrics: {
+            label: string;
+            value: string;
+            color: string;
+        }[];
+    }
+
+    const companyPerformance: companyPerformanceType[] = [
         {
-            company: 'TechCorp Industries',
+            companyName: 'TechCorp Industries',
             metrics: [
                 { label: 'Revenue Growth', value: '150%', color: 'text-green-600 dark:text-green-400' },
                 { label: 'User Acquisition', value: '200K+', color: 'text-blue-600 dark:text-blue-400' },
@@ -123,7 +132,7 @@ export default function ProfilePage() {
             ]
         },
         {
-            company: 'Global Solutions Inc',
+            companyName: 'Global Solutions Inc',
             metrics: [
                 { label: 'Product Launches', value: '12', color: 'text-green-600 dark:text-green-400' },
                 { label: 'Team Growth', value: '300%', color: 'text-blue-600 dark:text-blue-400' },
@@ -132,6 +141,27 @@ export default function ProfilePage() {
             ]
         }
     ];
+
+    const CompanyPfm = ( company: companyPerformanceType ) => (
+        <div className="flex flex-col bg-white rounded-xl p-3 md:p-6 border border-gray-200"
+        >
+            <h3 className="text-2xl md:text-3xl font-bold text-black mx-auto mb-8">
+                {company.companyName} 
+            </h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {company.metrics.map((metric, idx) => (
+                    <div key={idx} className="text-center">
+                        <div className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-2 ${metric.color}`}>
+                            {metric.value}
+                        </div>
+                        <div className="text-sm md:text-base text-gray-600">
+                            {metric.label}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    )
 
 
     return (
@@ -208,27 +238,8 @@ export default function ProfilePage() {
                         </div>
 
                         <div className="space-y-8 mx-4">
-                            {companyPerformance.map((company, index) => (
-                                <div
-                                    key={index}
-                                    className="flex flex-col bg-white rounded-xl p-3 md:p-6 border border-gray-200"
-                                >
-                                    <h3 className="text-2xl md:text-3xl font-bold text-black mx-auto mb-8">
-                                        {company.company}
-                                    </h3>
-                                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                                        {company.metrics.map((metric, idx) => (
-                                            <div key={idx} className="text-center">
-                                                <div className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-2 ${metric.color}`}>
-                                                    {metric.value}
-                                                </div>
-                                                <div className="text-sm md:text-base text-gray-600">
-                                                    {metric.label}
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
+                            {companyPerformance.map((companies, index) => (
+                                <CompanyPfm key={index} {...companies}/>
                             ))}
                         </div>
                     </section>

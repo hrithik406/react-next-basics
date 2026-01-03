@@ -10,5 +10,3 @@ export default function NavBtn(navBtn: { iconsrc: string, navName: string, class
         </Link>
     )
 }
-
-// w-full flex items-center space-x-3 px-4 py-2 text-sm xl:text-base bg-gray-200 text-gray-900 rounded-lg hover:font-medium hover:text-black shadow-[1px_2px_10px_rgba(0,0,0,0.1)]

@@ -12,6 +12,54 @@ export default function RootLayout({
 }>) {
 
 
+  type NavlistType = {
+    iconsrc: string;
+    navName: string;
+    linked: string;
+  }
+
+  const NavList = [
+    {
+      iconsrc: "/dashboard.png",
+      navName: "Profile",
+      linked: "/dashboard/profile"
+    },
+    {
+      iconsrc: "/leads.png",
+      navName: "Leads & Contacts",
+      linked: "/dashboard"
+    },
+    {
+      iconsrc: "/deals.png",
+      navName: "Deals Pipeline",
+      linked: "#"
+    },
+    {
+      iconsrc: "/analytics.png",
+      navName: "Analytics",
+      linked: "#"
+    },
+    {
+      iconsrc: "/list-check.svg",
+      navName: "Tasks & Activities",
+      linked: "#"
+    },
+    {
+      iconsrc: "/message.png",
+      navName: "Contact Us",
+      linked: "/dashboard/Contact"
+    },
+    {
+      iconsrc: "/settings.png",
+      navName: "About Us",
+      linked: "/dashboard/about"
+    },
+  ]
+
+  const NavListCard = (Navbtn: NavlistType) => (
+    <NavBtn iconsrc={Navbtn.iconsrc} navName={Navbtn.navName} linked={Navbtn.linked}></NavBtn>
+  )
+
   return (
     <section className="font-outfit grid grid-cols-[1fr_7fr] max-lg:grid-cols-[0_7fr] w-full h-full min-h-screen duration-100 ease-in-out relative">
       <div className="flex flex-col lg:flex-row h-screen bg-gray-50 sticky top-0">
@@ -46,17 +94,10 @@ export default function RootLayout({
           {/* Navigation */}
           <nav className="flex flex-1 p-4 overflow-y-auto">
             <div className="space-y-1 w-full">
-              <NavBtn iconsrc="/dashboard.png" navName="Profile" linked="/dashboard/profile"></NavBtn>
-              <NavBtn iconsrc="/leads.png" navName="Leads & Contacts" linked="/dashboard"></NavBtn>
-              <NavBtn iconsrc="/deals.png" navName="Deals Pipeline" linked="#"></NavBtn>
-              <NavBtn iconsrc="/analytics.png" navName="Analytics" linked="#"></NavBtn>
-              <NavBtn iconsrc="/list-check.svg" navName="Tasks & Activities" linked="#"></NavBtn>
-              <NavBtn iconsrc="/message.png" navName="Contact Us" linked="#"></NavBtn>
-              <NavBtn iconsrc="/settings.png" navName="About Us" linked="/dashboard/about"></NavBtn>
+              {NavList.map((NAV, i) => (
+                <NavBtn key={i} {...NAV} />))}
             </div>
           </nav>
-          {/* NavList.map((value, i)=>(
-          <NavBtn key={i} value={} />)) */}
 
           {/* Upgrade Card */}
           <div className="p-4">
@@ -127,10 +168,10 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-4 md:px-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 max-md:gap-0">
               <div className="flex relative gap-x-2 mb-2">
-              <div className="w-8 h-8 bg-black flex items-center justify-center">
-                <span className="text-white font-bold text-xl">T</span>
-              </div>
-              <span className="text-2xl font-bold text-black ">Tenx</span>
+                <div className="w-8 h-8 bg-black flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">T</span>
+                </div>
+                <span className="text-2xl font-bold text-black ">Tenx</span>
               </div>
               <p className="text-gray-700 mx-auto text-center md:text-left mb-2">
                 © 2025 Sarah Johnson. All rights reserved.
