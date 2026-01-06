@@ -4,6 +4,51 @@ import NavBtn from "./components/NavBtn";
 import HeaderButton from "./components/HeaderButton";
 import SocialBtn from "./components/socialBtn";
 
+export type NavlistType = {
+  iconsrc: string;
+  navName: string;
+  linked: string;
+}
+
+const NavList: NavlistType[] = [
+  {
+    iconsrc: "/dashboard.png",
+    navName: "Profile",
+    linked: "/dashboard/profile"
+  },
+  {
+    iconsrc: "/leads.png",
+    navName: "Leads & Contacts",
+    linked: "/dashboard"
+  },
+  {
+    iconsrc: "/deals.png",
+    navName: "Dog API",
+    linked: "/dashboard/dog"
+  },
+  {
+    iconsrc: "/analytics.png",
+    navName: "Analytics",
+    linked: "#"
+  },
+  {
+    iconsrc: "/list-check.svg",
+    navName: "Tasks & Activities",
+    linked: "#"
+  },
+  {
+    iconsrc: "/message.png",
+    navName: "Contact Us",
+    linked: "/dashboard/Contact"
+  },
+  {
+    iconsrc: "/settings.png",
+    navName: "About Us",
+    linked: "/dashboard/about"
+  },
+]
+
+
 
 export default function RootLayout({
   children,
@@ -11,54 +56,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-
-  type NavlistType = {
-    iconsrc: string;
-    navName: string;
-    linked: string;
-  }
-
-  const NavList = [
-    {
-      iconsrc: "/dashboard.png",
-      navName: "Profile",
-      linked: "/dashboard/profile"
-    },
-    {
-      iconsrc: "/leads.png",
-      navName: "Leads & Contacts",
-      linked: "/dashboard"
-    },
-    {
-      iconsrc: "/deals.png",
-      navName: "Deals Pipeline",
-      linked: "#"
-    },
-    {
-      iconsrc: "/analytics.png",
-      navName: "Analytics",
-      linked: "#"
-    },
-    {
-      iconsrc: "/list-check.svg",
-      navName: "Tasks & Activities",
-      linked: "#"
-    },
-    {
-      iconsrc: "/message.png",
-      navName: "Contact Us",
-      linked: "/dashboard/Contact"
-    },
-    {
-      iconsrc: "/settings.png",
-      navName: "About Us",
-      linked: "/dashboard/about"
-    },
-  ]
-
-  const NavListCard = (Navbtn: NavlistType) => (
-    <NavBtn iconsrc={Navbtn.iconsrc} navName={Navbtn.navName} linked={Navbtn.linked}></NavBtn>
-  )
 
   return (
     <section className="font-outfit grid grid-cols-[1fr_7fr] max-lg:grid-cols-[0_7fr] w-full h-full min-h-screen duration-100 ease-in-out relative">
@@ -94,8 +91,8 @@ export default function RootLayout({
           {/* Navigation */}
           <nav className="flex flex-1 p-4 overflow-y-auto">
             <div className="space-y-1 w-full">
-              {NavList.map((NAV, i) => (
-                <NavListCard key={i} {...NAV} />))}
+              {NavList.map((nav, i) => (
+                <NavBtn key={i} {...nav} />))}
             </div>
           </nav>
 
