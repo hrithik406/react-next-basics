@@ -28,8 +28,8 @@ const NavList: NavlistType[] = [
   },
   {
     iconsrc: "/analytics.png",
-    navName: "Analytics",
-    linked: "#"
+    navName: "Dynamic Routing",
+    linked: "/dashboard/routing"
   },
   {
     iconsrc: "/list-check.svg",
@@ -139,7 +139,7 @@ export default function RootLayout({
                   <input
                     type="text"
                     placeholder="Search ....."
-                    className="w-full bg-white pl-10 pr-4 py-2 text-sm text-black md:text-base border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                    className="w-full bg-white pl-10 pr-4 py-2 text-sm text-black md:text-base border border-gray-200 rounded-4xl focus:outline-none focus:ring-1 focus:ring-yellow-400 focus:rounded-lg transition-all ease-in-out duration-400"
                   />
                   <span className="hidden md:block absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs">⌘  K
                   </span>
@@ -159,9 +159,9 @@ export default function RootLayout({
           </header>
         </div>
 
-        <div>{children}</div>
+        <div className="mb-14">{children}</div>
         {/* Footer */}
-        <footer className="bg-white border-t border-gray-200 py-2.75 max-md:py-3 ">
+        <footer className="absolute bottom-0 w-full bg-white border-t border-gray-200 py-2.75 max-md:py-3 ">
           <div className="max-w-7xl mx-auto px-4 md:px-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 max-md:gap-0">
               <div className="flex relative gap-x-2 mb-2">
