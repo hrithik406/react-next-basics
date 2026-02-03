@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 type BreedType = {
     id: string;
     type: string;
@@ -28,7 +30,7 @@ type BreedType = {
     }
 }
 const DogApiCard = ((breed: BreedType) => {
-    const href = `/dashboard/dog/${breed}`
+    const href = `/dashboard/dog/${breed.id}`
     return (
         <div key={breed.id} className="bg-white rounded-xl p-6 md:p-8 border border-gray-300  hover:shadow-lg transition-shadow" >
             <h2 className="flex text-black text-xl border-b-0"><strong>{breed.attributes.name}</strong></h2>
@@ -46,9 +48,10 @@ const DogApiCard = ((breed: BreedType) => {
                 {breed.attributes.description}
             </p>
 
-            <div className="text-black">
+            <div className="text-black mb-2">
                 <strong>Hypoallergenic:</strong> {breed.attributes.hypoallergenic ? "✅ Yes" : "❌ No"}
             </div>
+            <Link href={`/dashboard/dog/${breed.id}`}><button className="mx-auto border text-xl bg-amber-300 text-black hover:cursor-pointer">Click for details</button></Link>
         </div>
     )
 }

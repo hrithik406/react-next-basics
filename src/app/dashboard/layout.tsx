@@ -124,7 +124,7 @@ export default function RootLayout({
       </div>
       {/* Header */}
       <div className="flex flex-col relative bg-slate-100">
-        <div className="bg-linear-to-b from-slate-100 via-slate-100 to-transparent w-full h-20 sticky top-0 z-20">
+        <div className="bg-linear-to-b from-slate-100 via-slate-100 to-transparent w-full h-25 sticky top-0 z-20">
           <header className="px-2 py-3 md:px-6 md:pt-4">
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-3 flex-1 max-w-xl">

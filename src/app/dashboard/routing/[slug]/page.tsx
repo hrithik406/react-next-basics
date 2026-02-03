@@ -1,5 +1,5 @@
-export default async function dynamic_routing({ params }: { params: Promise<{ slug: string }> }) {
-    const {slug} = await params
+export default async function DynamicRouting({ params }: { params: Promise<{ slug: string }>}) {
+    const {slug} =await params
     let lang = ["python","java","javascript","cpp","cs"]
     if(lang.includes(slug)){
         return (
