@@ -33,8 +33,8 @@ const NavList: NavlistType[] = [
   },
   {
     iconsrc: "/list-check.svg",
-    navName: "Tasks & Activities",
-    linked: "#"
+    navName: "USE STATE",
+    linked: "/dashboard/Client"
   },
   {
     iconsrc: "/message.png",
@@ -161,19 +161,27 @@ export default function RootLayout({
 
         <div className="mb-14">{children}</div>
         {/* Footer */}
-        <footer className="absolute bottom-0 w-full bg-white border-t border-gray-200 py-2.75 max-md:py-3 ">
-          <div className="max-w-7xl mx-auto px-4 md:px-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 max-md:gap-0">
-              <div className="flex relative gap-x-2 mb-2">
-                <div className="w-8 h-8 bg-black flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">T</span>
+        <footer className="absolute bottom-0 w-full bg-white border-t border-gray-200 py-2.75 max-md:py-3">
+          <div className="max-w-7xl px-4 md:px-8">
+            <div className="flex flex-col md:flex-row justify-between  gap-4 max-md:gap-0">
+              <div className="flex justify-between px-2">
+                <div className="flex relative gap-x-2 mb-2">
+                  <div className="w-8 h-8 bg-black flex items-center justify-center">
+                    <span className="text-white font-bold text-xl">T</span>
+                  </div>
+                  <span className="text-2xl font-bold text-black ">Tenx</span>
                 </div>
-                <span className="text-2xl font-bold text-black ">Tenx</span>
+                <div className="flex items-center space-x-5 md:invisible">
+                  <SocialBtn iconSrc="/linkedin.png"></SocialBtn>
+                  <SocialBtn iconSrc="/instagram.png"></SocialBtn>
+                  <SocialBtn iconSrc="/twitter.png"></SocialBtn>
+                  <SocialBtn iconSrc="/github.png"></SocialBtn>
+                </div>
               </div>
-              <p className="text-gray-700 mx-auto text-center md:text-left mb-2">
+              <p className="text-gray-700 m-auto text-center max-md:-mb-10">
                 © 2025 Sarah Johnson. All rights reserved.
               </p>
-              <div className="flex items-center space-x-5">
+              <div className="flex items-center space-x-5 max-md:invisible">
                 <SocialBtn iconSrc="/linkedin.png"></SocialBtn>
                 <SocialBtn iconSrc="/instagram.png"></SocialBtn>
                 <SocialBtn iconSrc="/twitter.png"></SocialBtn>
