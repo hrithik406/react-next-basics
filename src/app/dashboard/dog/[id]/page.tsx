@@ -30,15 +30,15 @@ export default async function DynamicIdRouting({ params }: { params: Promise<{ i
     const details: detailsType[] = [
         {
             title: "Life-Span",
-            value: `${breed.attributes.life.max} - ${breed.attributes.life.min}`
+            value: `${breed.attributes.life.max} - ${breed.attributes.life.min}  Yrs`
         },
         {
             title: "Male Weight",
-            value: `${breed.attributes.male_weight.max} - ${breed.attributes.male_weight.min}`
+            value: `${breed.attributes.male_weight.max} - ${breed.attributes.male_weight.min}  Kg`
         },
         {
             title: "Female Weight",
-            value: `${breed.attributes.female_weight.max} - ${breed.attributes.female_weight.min}`
+            value: `${breed.attributes.female_weight.max} - ${breed.attributes.female_weight.min}  Kg`
         },
         {
             title: "Hypoallergenic",
@@ -61,7 +61,7 @@ export default async function DynamicIdRouting({ params }: { params: Promise<{ i
     )
 
     return (
-        <main className="flex flex-col min-h-screen m-6 text-xl text-black">
+        <main className="flex flex-col m-6 text-xl text-black">
             <div className="grid grid-cols-3 gap-8 md:gap-12">
                 <div className="col-span-2 max-sm:col-span-3">
                     <div className="text-4xl px-1 font-bold">{breed.attributes.name}</div>
@@ -76,8 +76,8 @@ export default async function DynamicIdRouting({ params }: { params: Promise<{ i
                     <div className="bg-linear-to-br from-yellow-400 via-orange-400 to-pink-500 rounded-xl min-h-[400px] md:min-h-full lg:min-h-full flex items-center justify-center relative overflow-hidden">
                         <div className="absolute inset-0 flex items-center justify-center">
                             <div className="text-center">
-                                <div className="w-32 h-32 md:w-48 md:h-48 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-2xl">
-                                    <span className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white">IMG</span>
+                                <div className="w-32 h-32 md:w-48 md:h-48 bg-linear-to-bl from-green-400 to-purple-400 rounded-full flex items-center justify-center mx-auto mb-4 shadow-2xl">
+                                    <span className="text-5xl md:text-7xl font-bold text-gray-900">IMG</span>
                                 </div>
                                 <p className="text-white text-lg md:text-xl font-semibold">Profile Image Space</p>
                             </div>

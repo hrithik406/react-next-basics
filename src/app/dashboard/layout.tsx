@@ -34,7 +34,7 @@ const NavList: NavlistType[] = [
   {
     iconsrc: "/list-check.svg",
     navName: "USE STATE",
-    linked: "/dashboard/Client"
+    linked: "/dashboard/client"
   },
   {
     iconsrc: "/message.png",

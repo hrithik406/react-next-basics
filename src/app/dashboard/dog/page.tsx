@@ -30,7 +30,7 @@ type BreedType = {
     }
 }
 const DogApiCard = ((breed: BreedType) => {
-    const href = `/dashboard/dog/${breed.id}`
+    // const href = `/dashboard/dog/${breed.id}`
     return (
         <div key={breed.id} className="bg-white rounded-xl p-6 md:p-8 border border-gray-300  hover:shadow-lg transition-shadow" >
             <h2 className="flex text-black text-xl border-b-0"><strong>{breed.attributes.name}</strong></h2>
