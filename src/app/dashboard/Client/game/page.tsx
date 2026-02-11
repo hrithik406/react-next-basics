@@ -21,7 +21,7 @@ export default function ClickGame() {
                     }
                     return prevTime - 1
                 })
-            }, 100);
+            }, 1000);
         }
         return () => {
             if (intervalRef.current) {
