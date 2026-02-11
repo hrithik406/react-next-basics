@@ -21,7 +21,7 @@ export default function ClickGame() {
                     }
                     return prevTime - 1
                 })
-            }, 1000);
+            }, 100);
         }
         return () => {
             if (intervalRef.current) {
@@ -56,11 +56,11 @@ export default function ClickGame() {
 
     return (
         <div className="flex items-center justify-center p-4">
-            <div className="bg-white -mt-6 rounded-3xl shadow-2xl p-4 md:p-6 w-full max-w-md">
+            <div className="bg-white -mt-10 rounded-3xl shadow-2xl p-4 md:p-7 w-full max-w-md">
                 <h1 className="text-4xl md:text-5xl font-bold text-center mb-2 text-gray-800">
                     Click Speed Game
                 </h1>
-                <p className="text-center text-gray-600 mb-8">
+                <p className="text-center text-gray-600 mb-4">
                     How fast can you click in 10 seconds?
                 </p>
 
@@ -75,7 +75,7 @@ export default function ClickGame() {
                         </div>
                         <button
                             onClick={StartGame}
-                            className="w-full py-4 px-8 bg-linear-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white text-xl font-bold rounded-xl shadow-lg active:scale-95 transition-all duration-200"
+                            className="w-full py-4 px-8 bg-green-500 hover:bg-green-600 cursor-pointer text-white text-xl font-bold rounded-xl shadow-lg active:scale-95 transition-all duration-200"
                         >
                             Start Game
                         </button>
@@ -102,14 +102,14 @@ export default function ClickGame() {
 
                         <button
                             onClick={handleClick}
-                            className="w-full py-16 px-8 bg-linear-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white text-3xl font-bold rounded-2xl shadow-xl active:scale-95 transition-all duration-100 cursor-pointer select-none"
+                            className="w-full py-10 px-8 bg-blue-500 hover:bg-blue-700 text-white text-3xl font-bold rounded-2xl shadow-xl active:scale-95 transition-all duration-100 cursor-pointer select-none"
                         >
                             CLICK ME!
                         </button>
 
                         <button
                             onClick={ResetGame}
-                            className="w-full mt-4 py-3 px-6 bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold rounded-xl transition-all duration-200"
+                            className="w-full mt-4 py-3 px-6 bg-gray-300 hover:bg-gray-400 text-gray-700 cursor-pointer font-semibold rounded-xl transition-all duration-200"
                         >
                             Reset
                         </button>
@@ -118,8 +118,7 @@ export default function ClickGame() {
 
                 {GameFinish && (
                     <div className="text-center">
-                        <div className="bg-linear-to-r from-yellow-100 to-orange-100 rounded-2xl p-8 mb-6">
-                            <div className="text-6xl mb-4">🎉</div>
+                        <div className="bg-yellow-100 rounded-2xl p-6 mb-6">
                             <h2 className="text-3xl font-bold text-gray-800 mb-4">
                                 Time's Up!
                             </h2>
@@ -127,17 +126,18 @@ export default function ClickGame() {
                             <p className="text-7xl font-bold text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-purple-600 mb-4">
                                 {Score}
                             </p>
-                            <p className="text-gray-600">
-                                {Score < 30 && "Good try! Practice makes perfect! 💪"}
-                                {Score >= 30 && Score < 50 && "Nice work! You're getting faster! 🔥"}
-                                {Score >= 50 && Score < 70 && "Impressive speed! You're a pro! ⚡"}
-                                {Score >= 70 && "INCREDIBLE! You're a clicking legend! 🏆"}
+                            <p className="text-gray-600 text-lg">
+                                {Score == 0 && "Kabhi computer nhi chalaya kya"}
+                                {Score >= 1 && "Aye Bunty! tera saboon slow hai kya"}
+                                {Score >= 30 && Score < 50 && "Bahot tez ho rhe ho Bete"}
+                                {Score >= 50 && Score < 70 && "Impressive speed! You're a pro"}
+                                {Score >= 70 && "INCREDIBLE! You're a clicking legend"}
                             </p>
                         </div>
 
                         <button
                             onClick={StartGame}
-                            className="w-full py-4 px-8 bg-linear-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white text-xl font-bold rounded-xl shadow-lg active:scale-95 transition-all duration-200"
+                            className="w-full py-4 px-8 bg-green-500 hover:bg-green-600 cursor-pointer text-white text-xl font-bold rounded-xl shadow-lg active:scale-95 transition-all duration-200"
                         >
                             Play Again
                         </button>
