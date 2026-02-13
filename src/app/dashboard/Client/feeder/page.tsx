@@ -53,7 +53,6 @@ export default function PetFeeder() {
     const feedClick = () => {
         if (GameActive) {
             SetHunger((prevHunger) => prevHunger + 10)
-            SetHappy((prevHappy) => prevHappy + 5)
         }
     }
 
