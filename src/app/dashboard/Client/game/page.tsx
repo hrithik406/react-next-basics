@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect } from "react"
 
 export default function ClickGame() {
     const [Score, SetScore] = useState(0)
@@ -82,9 +82,44 @@ export default function ClickGame() {
                     </div>
                 )}
 
-                {GameActive && (
+                {GameActive && TimeLeft > 3 && (
                     <div className="text-center">
                         <div className="bg-gray-100 rounded-2xl p-6 mb-6">
+                            <div className="flex justify-between items-center mb-4">
+                                <div className="flex-1">
+                                    <p className="text-sm text-gray-600 mb-1">Score</p>
+                                    <p className="text-4xl font-bold text-blue-600">{Score}</p>
+                                </div>
+                                <div className="w-px h-16 bg-gray-300"></div>
+                                <div className="flex-1">
+                                    <p className="text-sm text-gray-600 mb-1">Time Left</p>
+                                    <p className={`text-4xl font-bold ${TimeLeft <= 3 ? 'text-red-600' : 'text-orange-600'}`}>
+                                        {TimeLeft}s
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button
+                            onClick={handleClick}
+                            className="w-full py-10 px-8 bg-blue-500 hover:bg-blue-700 text-white text-3xl font-bold rounded-2xl shadow-xl active:scale-95 transition-all duration-100 cursor-pointer select-none"
+                        >
+                            CLICK ME!
+                        </button>
+
+                        <button
+                            onClick={ResetGame}
+                            className="w-full mt-4 py-3 px-6 bg-gray-300 hover:bg-gray-400 text-gray-700 cursor-pointer font-semibold rounded-xl transition-all duration-200"
+                        >
+                            Reset
+                        </button>
+                    </div>
+                )}
+
+                {GameActive && TimeLeft <= 3 && (
+                    <div className="text-center">   
+                        <div className="bg-gray-100 rounded-2xl px-6 pb-6 pt-3 mb-6">
+                            <h1 className="flex items-center justify-center text-red-600 text-xl mb-2">HURRY UP! Click Faster</h1>
                             <div className="flex justify-between items-center mb-4">
                                 <div className="flex-1">
                                     <p className="text-sm text-gray-600 mb-1">Score</p>
@@ -128,9 +163,9 @@ export default function ClickGame() {
                             </p>
                             <p className="text-gray-600 text-lg">
                                 {Score == 0 && "Kabhi computer nhi chalaya kya"}
-                                {Score >= 1 && "Aye Bunty! tera saboon slow hai kya"}
+                                {Score >= 1 && Score < 30 && "Aye Bunty! tera saboon slow hai kya"}
                                 {Score >= 30 && Score < 50 && "Bahot tez ho rhe ho Bete"}
-                                {Score >= 50 && Score < 70 && "Impressive speed! You're a pro"}
+                                {Score >= 50 && Score < 70 && "Dhurrrrraate kaat rhi bete oommfooo"}
                                 {Score >= 70 && "INCREDIBLE! You're a clicking legend"}
                             </p>
                         </div>

@@ -19,6 +19,11 @@ export default function ProjectPage() {
             id: 2,
             projectName: 'Click Game',
             linked: 'client/game'
+        },
+        {
+            id: 3,
+            projectName: "Pet Feeder",
+            linked: "/dashboard/client/feeder"
         }
     ]
 
@@ -33,6 +38,7 @@ export default function ProjectPage() {
 
     return (
         <main className="flex flex-col m-4 h-auto bg-slate-100">
+            <div className="flex items-center justify-center text-4xl text-black font-bold mb-10">Mini Projects Using Hooks</div>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
                 {projects.map((project, i) => (
                     <ProjectCard key={i} {...project}/>
