@@ -1,3 +1,4 @@
+"use client"
 import { Children } from "react";
 import Link from 'next/link'
 import NavBtn from "./components/NavBtn";
@@ -46,15 +47,28 @@ const NavList: NavlistType[] = [
     navName: "About Us",
     linked: "/dashboard/about"
   },
+  {
+    iconsrc:"/settings.png",
+    navName: "Hooks",
+    linked: "/dashboard/hooks"
+  },
 ]
 
 
+import React, { useState } from "react";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  // The toggle function
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
 
 
   return (
@@ -64,7 +78,7 @@ export default function RootLayout({
         <div
           id="overlay"
           className="hidden fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
-        // onClick={toggleSidebar}
+          onClick={toggleSidebar}
         ></div>
 
         {/* Sidebar */}
@@ -81,7 +95,7 @@ export default function RootLayout({
               <span className="text-2xl font-bold text-black">Tenx</span>
               <button
                 className="ml-auto lg:hidden p-2 hover:bg-gray-100 rounded"
-              //   onClick={toggleSidebar}
+                onClick={toggleSidebar}
               >
                 <span className="text-xl">✕</span>
               </button>
@@ -129,10 +143,10 @@ export default function RootLayout({
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-3 flex-1 max-w-xl">
                 <button
-                  className="lg:hidden p-2 hover:bg-gray-100 rounded-lg hover:cursor-pointer"
-                // onClick={toggleSidebar}
+                  className="lg:hidden p-4 hover:bg-gray-100 rounded-lg hover:cursor-pointer"
+                  onClick={toggleSidebar}
                 >
-                  <span className="text-xl text-black">☰</span>
+                  {/* <span className="text-xl text-black">☰</span> */}
                 </button>
                 <div className="relative flex-1 -ml-2">
                   <span className="absolute w-4.5 left-3.5 top-1/2 transform -translate-y-1/2 text-gray-400"><img src="/search.png" alt="" /></span>

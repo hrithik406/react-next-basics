@@ -80,23 +80,23 @@ export default function PetFeeder() {
     }
 
     return (
-        <main className="flex items-center justify-center h-[70vh]">
-            <div className="bg-white rounded-3xl shadow-2xl p-8 w-130">
+        <main className="flex items-center justify-center p-4">
+            <div className="bg-white -mt-10 rounded-3xl shadow-2xl p-4 md:p-7 w-full max-w-md">
                 <h1 className="text-4xl md:text-5xl font-bold text-center mb-3 text-gray-800">Pet Feeder</h1>
                 <p className="text-center text-xl text-gray-600 mb-6 w-full">
-                    Feed the pet and make the pet Happy
+                    Feed the pet and make the pet Happy 
                 </p>
 
                 {!GameActive && !GameFinish && (
                     <div className="text-center">
-                        <div className="bg-linear-to-r from-blue-100 to-purple-100 rounded-2xl p-8 mb-6">
+                        <div className="bg-[radial-gradient(ellipse_at_50%_40%,#ddeedd_30%,#f4f1ec_60%)] rounded-2xl p-8 mb-6">
                             <p className="text-xl text-gray-700 mb-4">
                                 Click the buttons to feed and play with the pet!
                             </p>
-                            <div className="text-6xl mb-4">🦁</div>
+                            <div className="text-6xl mb-4 select-none">🦁</div>
                             <p className="text-2xl font-bold text-gray-800">Don't let the Pet DIE!</p>
                         </div>
-                        <button onClick={StartGame} className="w-full py-4 px-8 bg-green-500 hover:bg-green-600 cursor-pointer text-white text-xl font-bold rounded-xl shadow-lg active:scale-95 transition-all duration-200">
+                        <button onClick={StartGame} className="w-full py-4 px-8 bg-green-500 hover:bg-green-600 cursor-pointer text-white text-xl font-bold rounded-xl shadow-lg active:scale-95 transition-all duration-200 select-none">
                             Start Game
                         </button>
                     </div>
@@ -106,7 +106,7 @@ export default function PetFeeder() {
                     <div className="text-center">
                         <div className="bg-gray-100 rounded-2xl w-full py-6 mb-6">
                             <div className="text-6xl font-mono font-bold text-center mx-auto text-gray-800">
-                                <div className="flex justify-between items-center mb-4">
+                                <div className="flex justify-between items-center mb-4 select-none">
                                     <div className="flex-1">
                                         <p className="text-lg text-gray-600 mb-2">Stomach</p>
                                         <p className={`text-4xl font-bold ${Hunger <= 10 ? 'text-red-600' : 'text-black'}`}>
@@ -129,7 +129,7 @@ export default function PetFeeder() {
                                 PLAY WITH ME!
                             </button>
                         </div>
-                        <button onClick={reset} className="w-full py-4 px-8 bg-green-500 hover:bg-green-600 cursor-pointer text-white text-xl font-bold rounded-xl shadow-lg active:scale-95 transition-all duration-200">
+                        <button onClick={reset} className="w-full py-4 px-8 bg-green-500 hover:bg-green-600 cursor-pointer text-white text-xl font-bold rounded-xl shadow-lg active:scale-95 transition-all duration-200 select-none">
                             Reset Game
                         </button>
                     </div>
@@ -150,7 +150,7 @@ export default function PetFeeder() {
 
                         <button
                             onClick={StartGame}
-                            className="w-full py-4 px-8 bg-green-500 hover:bg-green-600 cursor-pointer text-white text-xl font-bold rounded-xl shadow-lg active:scale-95 transition-all duration-200"
+                            className="w-full py-4 px-8 bg-green-500 hover:bg-green-600 cursor-pointer text-white text-xl font-bold rounded-xl shadow-lg active:scale-95 transition-all duration-200 select-none"
                         >
                             Play Again
                         </button>
